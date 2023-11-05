@@ -7,12 +7,9 @@ let readMore = more.repeat(850)
 let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}ping_
 │ _${usedPrefix}uptime_
-│ _${usedPrefix}enable_
 │ _${usedPrefix}alive_
 │ _${usedPrefix}owner_
-│ _${usedPrefix}report_
 │ _${usedPrefix}bot_
-│ _${usedPrefix}script_
 │ _${usedPrefix}runtime_
 │ _${usedPrefix}infobot_
 │ _${usedPrefix}donate_
