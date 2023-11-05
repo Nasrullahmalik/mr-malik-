@@ -3,11 +3,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
    let name = m.pushName || conn.getName(m.sender);
   
   // Define the content
-  let mainImg = "https://replicate.delivery/pbxt/QbP6Fh3ZXwKON9SCB70ERGwwgeeSbztwKIOIzhUeXFkwnFHiA/out.png"; // Main image URL
-  let smallImg = "https://replicate.delivery/pbxt/QbP6Fh3ZXwKON9SCB70ERGwwgeeSbztwKIOIzhUeXFkwnFHiA/out.png"; // Small image URL
+  let mainImg = "https://replicate.delivery/pbxt/i6cm2SEHYBpDFZnT7bsziAtFXN93pRQ1lE0dakq9ghwSjVdE/out.png"; // Main image URL
+  let smallImg = "https://replicate.delivery/pbxt/i6cm2SEHYBpDFZnT7bsziAtFXN93pRQ1lE0dakq9ghwSjVdE/out.png"; // Small image URL
   let smallText = "I'M Alive Now"; // Small text
-  let mainText = "𝙰𝙱𝙷𝙸𝚂𝙷𝙴𝙺-𝚂𝙴𝚁"; // Main text
-  let audioUrl = "https://raw.githubusercontent.com/AbhishekSuresh2/ABHISHEK-SER/main/src/mp3/Abhi.mp3"; // Audio URL
+  let mainText = "◇●●●🇵🇰●●●◇"; // Main text
+  let audioUrl = "https://raw.githubusercontent.com/nasrullahmalik/mr-malik-/main/src/mp3/Abhi.mp3"; // Audio URL
   // Construct the message
   let con = {
     key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) },
@@ -26,14 +26,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     mimetype: 'audio/mp4',
     ptt: true,
     waveform: [100, 0, 100, 0, 100, 0, 100],
-    fileName: "ABHISHEK-SER",
+    fileName: "Mr-Malik",
     contextInfo: {
       mentionedJid: [m.sender],
       externalAdReply: {
         title: smallText,
         body: mainText,
         thumbnailUrl: smallImg, // Small image
-        sourceUrl: 'https://github.com/AbhishekSuresh2/ABHISHEK-SER',
+        sourceUrl: 'https://github.com/nasrullahmalik/mr-malik-',
         mediaType: 1,
         renderLargerThumbnail: false,
         mediaUrl: mainImg // Main image
