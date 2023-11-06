@@ -5,70 +5,13 @@ let pp = './Abhi.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
-│ _${usedPrefix}ping_
 │ _${usedPrefix}uptime_
 │ _${usedPrefix}alive_
 │ _${usedPrefix}owner_
 │ _${usedPrefix}bot_
 │ _${usedPrefix}runtime_
 │ _${usedPrefix}infobot_
-│ _${usedPrefix}donate_
-│ _${usedPrefix}groups_
-│ _${usedPrefix}blocklist_
-│ _${usedPrefix}listprem_
 ╰─────────────⦁
-
-╭───❮ *☆☆🇵🇰☆☆* ❯
-│ _${usedPrefix}*on/off* public_
-│ _${usedPrefix}*on/off* autoreact_
-│ _${usedPrefix}update_
-│ _${usedPrefix}sudo_
-│ _${usedPrefix}autoadmin_
-│ _${usedPrefix}left_
-│ _${usedPrefix}banchat_
-│ _${usedPrefix}unbanchat_
-│ _${usedPrefix}ban_
-│ _${usedPrefix}unban_
-│ _${usedPrefix}banlist_
-│ _${usedPrefix}block_
-│ _${usedPrefix}unblock_
-│ _${usedPrefix}blocklist_
-│ _${usedPrefix}bc_
-│ _${usedPrefix}bcgc_
-│ _${usedPrefix}join_ 
-│ _${usedPrefix}restart_
-│ _${usedPrefix}setpp_
-│ _${usedPrefix}setprefix_
-│ _${usedPrefix}resetprefix_
-│ _${usedPrefix}resetuser_
-╰─────────────⦁
-${readMore} 
-╭───❮ *☆☆🇵🇰☆☆* ❯
-│ _${usedPrefix}kick *@tag*_
-│ _${usedPrefix}promote *@tag*_
-│ _${usedPrefix}demote *@tag*_
-│ _${usedPrefix}infogroup_
-│ _${usedPrefix}getbio *@tag*_
-│ _${usedPrefix}resetlink_
-│ _${usedPrefix}link_
-│ _${usedPrefix}*on/off* antilink_
-│ _${usedPrefix}*on/off* antidelete_
-│ _${usedPrefix}invite_
-│ _${usedPrefix}setppgc *image*_
-│ _${usedPrefix}setname *text*_
-│ _${usedPrefix}setdesc *text*_
-│ _${usedPrefix}setwelcome *text*_
-│ _${usedPrefix}setbye *text*_
-│ _${usedPrefix}hidetag *text/image/audio/vid*_
-│ _${usedPrefix}warn *@tag*_
-│ _${usedPrefix}unwarn *@tag*_
-│ _${usedPrefix}listwarn_
-│ _${usedPrefix}listnum_
-│ _${usedPrefix}kicknum_
-│ _${usedPrefix}group *open/close*_
-│ _${usedPrefix}tagall_
-╰─────────────⦁
-
 
 ╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}song_
@@ -87,7 +30,7 @@ ${readMore}
 │ _${usedPrefix}fb *link*_
 ╰─────────────⦁
 
-
+${readMore}
 ╭───❮ *☆☆ 🇵🇰 ☆☆* ❯
 │ _${usedPrefix}toanime_
 │ _${usedPrefix}tomp3_
@@ -111,13 +54,9 @@ ${readMore}
 
 
 ╭───❮ *☆☆☆ 🇵🇰 ☆☆☆* ❯
-│ _${usedPrefix}tictactoe_
-│ _${usedPrefix}delttt_
 │ _${usedPrefix}math_
 │ _${usedPrefix}math answer_
 │ _${usedPrefix}ppt_
-│ _${usedPrefix}slot_
-│ _${usedPrefix}casino_
 ╰─────────────⦁
 
 ╭───❮ *☆☆☆ 🇵🇰 ☆☆☆* ❯
@@ -154,9 +93,12 @@ ${readMore}
 ╰─────────────⦁
 
 
-╭───❮  *🇵🇰☆☆☆M-r Malik☆☆☆🇵🇰* ❯
+╭❮  *🇵🇰☆M-r Malik☆🇵🇰* ❯
 │      ◇○○○○○○○◇
-│   《《《《》》♡♡♡》》》》》
+│     《《《♡♡♡》》》  
+│     Bot
+│   Created By 
+│     NASRULLAH
 ╰────────────⦁`  
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
 m.react('📃')

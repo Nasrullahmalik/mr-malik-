@@ -1,6 +1,6 @@
 let handler = async (m, { conn, args, text, usedPrefix, command }) => {
-	let tee = `🎯 Enter A Short Text\n\n📌Example  : *${usedPrefix + command}* ABHISHEK`
-	let too = `🎯 Separate The Text With A *+* \n\n📌Example : \n*${usedPrefix + command}* ABHISHEK *+* SER`
+	let tee = `🎯 Enter A Short Text\n\n📌Example  : *${usedPrefix + command}* Nasrullah`
+	let too = `🎯 Separate The Text With A *+* \n\n📌Example : \n*${usedPrefix + command}* Mr- *+* Malik`
 	
 	m.react('⌛');
 	
