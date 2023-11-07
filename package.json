@@ -1,5 +1,5 @@
 { 
-    "name": "ABHISHEK-SER",
+    "name": "Mr-Malik",
     "version": "0.0.1",
     "description": "Customizable WhatsApp Bot",
     "main": "index.js",
@@ -20,18 +20,18 @@
         "js-whatsapp",
         "whatsapp",
         "wa-bot",
-        "ABHISHEK-SER",
+        "Mr-Malik",
         "multi-device",
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/AbhishekSuresh2/ABHISHEK-SER",
+    "homepage": "https://github.com/nasrullahmalik/mr-malik-",
     "author": {
-        "name": "ABHISHEK SURESH"
+        "name": "MrMalik"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/AbhishekSuresh2/ABHISHEK-SER.git"
+        "url": "git+https://github.com/nasrullahmalik/mr-malik-.git"
     },
     "bugs": {
         "url": "https://github.com/AbhishekSuresh2/ABHISHEK-SER/issues"
