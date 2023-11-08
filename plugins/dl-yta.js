@@ -1,1 +1,108 @@
-const 0x3f38a6=_0x3be7;(function(_0x1662db,_0x32a92e){const _0x4748a=_0x3be7,_0x3e3c81=_0x1662db();while(!![]){try{const _0x401d1e=parseInt(_0x4748a(0x180))/0x1*(-parseInt(_0x4748a(0x181))/0x2)+-parseInt(_0x4748a(0x189))/0x3*(parseInt(_0x4748a(0x18c))/0x4)+parseInt(_0x4748a(0x194))/0x5+parseInt(_0x4748a(0x198))/0x6+parseInt(_0x4748a(0x18e))/0x7+parseInt(_0x4748a(0x18d))/0x8*(-parseInt(_0x4748a(0x17b))/0x9)+parseInt(_0x4748a(0x18b))/0xa;if(_0x401d1e===_0x32a92e)break;else _0x3e3c81['push'](_0x3e3c81['shift']());}catch(_0x14616c){_0x3e3c81['push'](_0x3e3c81['shift']());}}}(_0x4222,0x23042));function _0x3be7(_0x362d56,_0x5545e2){const _0x42220c=_0x4222();return _0x3be7=function(_0x3be79b,_0x2987b3){_0x3be79b=_0x3be79b-0x17a;let _0x3b867d=_0x42220c[_0x3be79b];return _0x3b867d;},_0x3be7(_0x362d56,_0x5545e2);}import{youtubedl,youtubedlv2,youtubedlv3}from'@bochilteam/scraper';import _0x2ba25c from'node-fetch';function _0x4222(){const _0x5f2808=['169264zTXiZV','1218021qSzeWf','audio','*\x20Processing\x20Audio.._*\x0a\x0a*\x20command\x20.playdoc\x20ᴏ\x20.play.2\x20ᴏ\x20.ytmp4doc\x20','&url=','title','command','1050965Obcqts','128kbps','\x20ABHISHEK\x20SER\x20\x20SEARCH\x20YOUTUBE*','result','1004682OQSZyU','sendMessage','90HiiPir','https://api.lolhuman.xyz/api/ytaudio2?apikey=','link','sendFile','audio/mp4','15807WoUElD','34sKoAsT','*AUDIO\x20ERROR*','error','fileSizeH','chat','reply','catch','.mp3','12471wjejxH','json','2175770nVbsMG','140xXDDgz'];_0x4222=function(){return _0x5f2808;};return _0x4222();}let handler=async(_0x7f45b1,{conn:_0x55cc88,args:_0x198b52})=>{const _0x475d38=_0x3be7;if(!_0x198b52[0x0])throw _0x475d38(0x196);await _0x7f45b1[_0x475d38(0x186)](_0x475d38(0x190));try{let _0x41a048=_0x475d38(0x195),_0x318522=_0x198b52[0x0];const _0x14afcb=await youtubedl(_0x318522)['catch'](async _0x13993b=>await youtubedlv2(_0x318522))[_0x475d38(0x187)](async _0x23e04c=>await youtubedlv3(_0x318522)),_0x161b86=await _0x14afcb[_0x475d38(0x18f)][_0x41a048]['download'](),_0x16848c=await _0x14afcb[_0x475d38(0x192)],_0x221bc6=await _0x14afcb[_0x475d38(0x18f)][_0x41a048][_0x475d38(0x184)];await _0x55cc88[_0x475d38(0x17e)](_0x7f45b1['chat'],_0x161b86,_0x16848c+'.mp3',null,_0x7f45b1,![],{'mimetype':_0x475d38(0x17f)});}catch{try{let _0x4ffe66=await _0x2ba25c(_0x475d38(0x17c)+lolkeysapi+_0x475d38(0x191)+_0x198b52[0x0]),_0x124f7e=await _0x4ffe66[_0x475d38(0x18a)](),_0x477f02=_0x124f7e[_0x475d38(0x197)][_0x475d38(0x192)]||_0x475d38(0x183);await _0x55cc88[_0x475d38(0x17a)](_0x7f45b1[_0x475d38(0x185)],{'audio':{'url':_0x124f7e[_0x475d38(0x197)][_0x475d38(0x17d)]},'fileName':_0x477f02+_0x475d38(0x188),'mimetype':_0x475d38(0x17f)},{'quoted':_0x7f45b1});}catch{await _0x55cc88[_0x475d38(0x186)](_0x7f45b1['chat'],_0x475d38(0x182),_0x7f45b1);}}};handler[_0x3f38a6(0x193)]=/^fgmp3|dlmp3|getaud|yt(a|mp3)$/i;export default handler;
+import {youtubedl, youtubedlv2} from '@bochilteam/scraper';
+import fetch from 'node-fetch';
+import yts from 'yt-search';
+import ytdl from 'ytdl-core';
+import axios from 'axios'
+import {bestFormat, getUrlDl} from '../lib/y2dl.js';
+const handler = async (m, {text, conn, args, usedPrefix, command}) => {
+  if (!args[0]) throw '*[❗] Uso incorrecto del comando, ingrese un enlace / link de YouTube.*';  
+  let enviando;
+  if (enviando) return  
+      enviando = true      
+  let youtubeLink = '';
+  if (args[0].includes('you')) {
+    youtubeLink = args[0];
+  } else {
+    const index = parseInt(args[0]) - 1;
+    if (index >= 0) {
+      if (Array.isArray(global.videoList) && global.videoList.length > 0) {
+        const matchingItem = global.videoList.find((item) => item.from === m.sender);
+        if (matchingItem) {
+          if (index < matchingItem.urls.length) {
+            youtubeLink = matchingItem.urls[index];
+          } else {
+            throw `*[❗] No se encontro un enlace para ese numero, por favor ingrese un numero entre el 1 y el ${matchingItem.urls.length}*`;
+          }
+        } else {
+          throw `*[❗] Para poder hacer uso del comando de esta forma (${usedPrefix + command} <numero>), por favor realiza la busqueda de videos con el comando ${usedPrefix}playlist <texto>*`;
+        }
+      } else {
+        throw `*[❗] Para poder hacer uso del comando de esta forma (${usedPrefix + command} <numero>), por favor realiza la busqueda de videos con el comando ${usedPrefix}playlist <texto>*`;
+      }
+    }
+  }
+  const { key } = await conn.sendMessage(m.chat, {text: `*_⏳processing your ᴀᴜᴅɪᴏ...⏳_*\n\n*◉ Sɪ Sᴜ ᴀᴜᴅɪᴏ ɴᴏ ᴇs ᴇɴᴠɪᴀᴅᴏ, ᴘʀᴜᴇʙᴇ ᴄᴏɴ ᴇʟ ᴄᴏᴍᴀɴᴅᴏ #playdoc ᴏ #play.2 ᴏ #ytmp4doc ◉*`}, {quoted: m});
+  try {
+    const formats = await bestFormat(youtubeLink, 'audio');
+    const dl_url = await getUrlDl(formats.url);
+    const buff = await getBuffer(dl_url.download);    
+    const yt_1 = await youtubedl(youtubeLink).catch(async (_) => await youtubedlv2(youtubeLink));
+    const ttl_1 = `${yt_1?.title ? yt_1.title : 'Tu_audio_descargado'}`;
+    const fileSizeInBytes = buff.byteLength;
+    const fileSizeInKB = fileSizeInBytes / 1024;
+    const fileSizeInMB = fileSizeInKB / 1024;
+    const roundedFileSizeInMB = fileSizeInMB.toFixed(2);
+   if (fileSizeInMB > 50) {
+    await conn.sendMessage(m.chat, {document: buff, caption: `*▢ Title:* ${ttl_1}\n*▢ Peso Del Audio:* ${roundedFileSizeInMB} MB`, fileName: ttl_1 + '.mp3', mimetype: 'audio/mpeg'}, {quoted: m});
+    await conn.sendMessage(m.chat, {text: `*[ ✔ ] Audio descargado y enviado exitosamente.*\n\n*—◉ Se envío en formato de documento debido a que el audio pesa ${roundedFileSizeInMB} MB y supera el limite establecido por WhatsApp.*\n*◉ Titulo:* ${ttl_1}`, edit: key}, {quoted: m});
+    enviando = false
+   } else {
+    await conn.sendMessage(m.chat, {audio: buff, caption: `*▢ Title:* ${ttl_1}\n*▢ Peso Del Audio:* ${roundedFileSizeInMB} MB`, fileName: ttl_1 + '.mp3', mimetype: 'audio/mpeg'}, {quoted: m});
+    await conn.sendMessage(m.chat, {text: `*[ ✔ ] Audio descargado y enviado exitosamente.*`, edit: key}, {quoted: m});
+    enviando = false   
+   }    
+  } catch {
+    console.log('noooooo')
+  try {
+    const q = '128kbps';
+    const v = youtubeLink;
+    const yt = await youtubedl(v).catch(async (_) => await youtubedlv2(v));
+    const dl_url = await yt.audio[q].download();
+    const ttl = await yt.title;
+    const size = await yt.audio[q].fileSizeH;
+    await conn.sendFile(m.chat, dl_url, ttl + '.mp3', null, m, false, {mimetype: 'audio/mpeg'});
+    await conn.sendMessage(m.chat, {text: '*[ ✔ ] Audio descargado exitosamente.*', edit: key}, {quoted: m});
+  } catch {
+    try {
+      const lolhuman = await fetch(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${lolkeysapi}&url=${youtubeLink}`);
+      const lolh = await lolhuman.json();
+      const n = lolh.result.title || 'error';
+      await conn.sendMessage(m.chat, {audio: {url: lolh.result.link}, fileName: `${n}.mp3`, mimetype: 'audio/mpeg'}, {quoted: m});
+      await conn.sendMessage(m.chat, {text: '*[ ✔ ] Audio descargado exitosamente.*', edit: key}, {quoted: m});
+    } catch {
+      try {
+        const searchh = await yts(youtubeLink);
+        const __res = searchh.all.map((v) => v).filter((v) => v.type == 'video');
+        const infoo = await ytdl.getInfo('https://youtu.be/' + __res[0].videoId);
+        const ress = await ytdl.chooseFormat(infoo.formats, {filter: 'audioonly'});
+        conn.sendMessage(m.chat, {audio: {url: ress.url}, fileName: __res[0].title + '.mp3', mimetype: 'audio/mpeg'}, {quoted: m});
+        await conn.sendMessage(m.chat, {text: '*[ ✔ ] Audio descargado exitosamente.*', edit: key}, {quoted: m});
+      } catch {
+        await conn.sendMessage(m.chat, {text: `*[ ❌ ] El audio no pudo ser descargado ni enviado, vuelva a intentarlo.*`, edit: key}, {quoted: m});
+        throw '*[❗] Error, no fue posible descargar el audio.*';
+      }
+    }
+  }
+}};
+handler.command = /^(audio|fgmp3|dlmp3|getaud|yt(a|mp3))$/i;
+export default handler
+
+const getBuffer = async (url, options) => {
+  try {
+    options ? options : {};
+    const res = await axios({
+      method: 'get',
+      url,
+      headers: {
+        'DNT': 1,
+        'Upgrade-Insecure-Request': 1,
+      },
+      ...options,
+      responseType: 'arraybuffer',
+    });
+
+    return res.data;
+  } catch (e) {
+    console.log(`Error : ${e}`);
+  }
+};
