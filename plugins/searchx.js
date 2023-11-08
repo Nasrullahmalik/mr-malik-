@@ -25,9 +25,6 @@ conn.sendMessage(m.sender, listMessage, { quoted: m })
 m.reply('*Error\nFbi open up!!*')
 }}
 handler.command = /^porhubsearch|xvideossearch|xnxxsearch|xsearch$/i
-handler.owner = true
-handler.private = true
-handler.premium = true
 export default handler
 
 async function xnxxsearch(query) {
