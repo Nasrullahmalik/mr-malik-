@@ -4,7 +4,7 @@ import axios from 'axios'
 
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 if (global.cricket_URL === undefined) return await m.reply('_No matchs found. Set cricket_URL in config vars!_')
-var data = await axios.get(`https://crickbuzz.vercel.app/score?url=${global.cricket_URL}&timestamp=`+new Date());
+var data = await axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75595/eng-vs-ned-40th-match-icc-cricket-world-cup-2023&timestamp=`+new Date());
 var msg = '';
 if (data.title) msg += data.title + `\n`
 if (data.update) msg += `*`+data.update + `*\n\n`
