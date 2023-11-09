@@ -5,7 +5,7 @@ import axios from 'axios'
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 
 var data = await axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75602/nz-vs-sl-41st-match-icc-cricket-world-cup-2023&timestamp=`+new Date());
-
+var msg = '';
 if (data.title) msg += data.title + `\n`
 if (data.update) msg += `*`+data.update + `*\n\n`
 if (data.current) msg += '*'+data.current + `*\n`
