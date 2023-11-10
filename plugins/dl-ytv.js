@@ -1,64 +1,62 @@
-import ytdl from 'ytdl-core';
-import fs from 'fs';
-import os from 'os';
+import { 
+    youtubedl,
+    youtubedlv2 
+} from '@bochilteam/scraper'
+const handler = async (m, { conn, args, command }) => {
+  if (!args[0]) throw 'Where`s Url?'
+  const v = args[0]
 
-let limit = 500;
-let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-  if (!args || !args[0]) throw `📌Example:\n${usedPrefix + command} https://youtu.be/Xb1-Oh1_msQ`;
-  if (!args[0].match(/youtu/gi)) throw `🎯 Verify That The YouTube Link`;
+  const resolutions = ["144p", "240p", "360p", "480p", "720p", "1080p"]
+  let qu = args[1] && resolutions.includes(args[1]) ? args[1] : "360p"
+  let q = qu.replace('p', '')
 
-  let chat = global.db.data.chats[m.chat];
-  m.react(rwait);
+  let thumb = {}
   try {
-    const info = await ytdl.getInfo(args[0]);
-    const format = ytdl.chooseFormat(info.formats, { quality: 'highest' });
-    if (!format) {
-      throw new Error('No valid formats found');
-    }
+    const thumb2 = yt.thumbnails[0].url
+    thumb = { jpegThumbnail: thumb2 }
+  } catch (e) {}
 
-    if (format.contentLength / (1024 * 1024) >= limit) {
-      return m.reply(`≡ *Mr-Malik YT-DL*\n\n▢ *⚖️Size*: ${format.contentLength / (1024 * 1024).toFixed(2)}MB\n▢ *🎞️Quality*: ${format.qualityLabel}\n\n▢ The File Exceeds The Download Limit *+${limit} MB*`);
-    }
-
-    const tmpDir = os.tmpdir();
-    const fileName = `${tmpDir}/${info.videoDetails.videoId}.mp4`;
-
-    const writableStream = fs.createWriteStream(fileName);
-    ytdl(args[0], {
-      quality: format.itag,
-    }).pipe(writableStream);
-
-    writableStream.on('finish', () => {
-      conn.sendFile(
-        m.chat,
-        fs.readFileSync(fileName),
-        `${info.videoDetails.videoId}.mp4`,
-        ` ╭──── 〔 Y O U T U B E 〕 ─⬣
-	  ⬡ Title: ${info.videoDetails.title}
-	  ⬡ Duration: ${info.videoDetails.lengthSeconds} seconds
-	  ╰─────────────────⬣`,
-        m,
-        false,
-        { asDocument: chat.useDocument }
-      );
-
-      fs.unlinkSync(fileName); // Delete the temporary file
-      m.react(done);
-    });
-
-    writableStream.on('error', (error) => {
-      console.error(error);
-      m.reply('*❌Error While Trying To Download The Video. Please Try Again.*');
-    });
-  } catch (error) {
-    console.error(error);
-    m.reply('*❌Error While Trying To Process The Video. Please Try Again.*');
+  let yt
+  try {
+    yt = await youtubedl(v)
+  } catch {
+    yt = await youtubedlv2(v)
   }
-};
 
-handler.help = ['ytmp4 <yt-link>'];
-handler.tags = ['dl'];
-handler.command = ['ytmp4', 'video'];
-handler.diamond = false;
+  const title = await yt.title
 
-export default handler;
+  let size = ''
+  let dlUrl = ''
+  let selectedResolution = ''
+  let selectedQuality = ''
+  for (let i = resolutions.length - 1; i >= 0; i--) {
+    const res = resolutions[i]
+    if (yt.video[res]) {
+      selectedResolution = res
+      selectedQuality = res.replace('p', '')
+      size = await yt.video[res].fileSizeH
+      dlUrl = await yt.video[res].download()
+      break
+    }
+  }
+
+  if (dlUrl) {
+    await	m.react('🎥')
+    await m.reply(`YouTube video download request. Processing, please be patient...`)
+
+    await conn.sendMessage(m.chat, { video: { url: dlUrl, caption: title, ...thumb } }, { quoted: m })
+
+    await m.reply(`▢ Title: ${title}
+▢ Resolution: ${selectedResolution}
+▢ Size: ${size}
+▢ The video has been successfully downloaded!\n\n${fig}`)
+  } else {
+    await m.reply(`Sorry, the video is not available for download.`)
+  }
+}
+
+handler.command = /^(getvid|ytmp4|youtubemp4|ytv|video)$/i
+handler.help = ["getvid <linkYt>","ytmp4 <linkYT>"]
+handler.tags = ['downloader']
+
+export default handler
