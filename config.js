@@ -21,8 +21,8 @@ global.keysxteam = keysxteammm[Math.floor(keysxteammm.length * Math.random())]
 global.keysneoxrrr = ['5VC9rvNx', 'cfALv5']
 global.keysneoxr = keysneoxrrr[Math.floor(keysneoxrrr.length * Math.random())]
 global.lolkeysapi = ['BrunoSobrino']
-global.openAiapi = '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'   // Get you Api-key from 'https://platform.openai.com/account/api-keys'
-global.org = 'org-5pCOr5MZ9XFPHUWPP78TBKdx'
+global.openAiapi = 'ThZzt3Ox4l786j0g0kaFT3BlbkFJ9BJKJ0xXVHvDwtb0Jz4M'   // Get you Api-key from 'https://platform.openai.com/account/api-keys'
+global.org = '5pCOr5MZ9XFPHUWPP78TBKdx'
 global.APIs = { // API Prefix
   // name: 'https://website'
   xteam: 'https://api.xteam.xyz', 
