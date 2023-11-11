@@ -18,7 +18,7 @@ try {
           return  '*───「 Youtube Search 」───* Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886 YouTube Search 🔎';
           
    }).join('\n\n');
-    m.reply('${listSections2}');
+    m.reply('test ... ${listSections2}');
 } catch {
   let cari = await youtubeSearch('${text}');
     let dapet = cari.video;
@@ -31,7 +31,7 @@ try {
  return  '*───「 Youtube Search 」───* Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886 YouTube Search 🔎';
  
  }).join('\n\n');
- m.reply('${listSections2}');
+ m.reply('search result ${listSections}');
  } }
 handler.help = ['ytsearch <query>'];
 handler.tags = ['internet'];
