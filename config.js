@@ -73,6 +73,8 @@ global.sdc = '🎶'
 global.xmoji = '🔥' 
 global.multiplier = 69 
 global.maxwarn = '3' // máxima advertencias
+global.videoList = [];
+global.videoListXXX = [];
 
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
