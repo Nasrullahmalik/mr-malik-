@@ -35,7 +35,7 @@ function secondString(seconds) {
   return dDisplay + hDisplay + mDisplay + sDisplay;
 }
 
-let handler = async (m, { conn, groupMetadata, usedPrefix, text, args, command }) => {
+let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 try {
   if (!text) throw `Use example ${usedPrefix}${command} gustixa`
   let vid = (await youtubeSearch(text)).video[0]
@@ -71,10 +71,10 @@ try {
 let buttons = [{ buttonText: { displayText: '🎶 Audio' }, buttonId: `${usedPrefix}opta ${url}` }, { buttonText: { displayText: '🎥 Video' }, buttonId: `${usedPrefix}optv ${url}` }] 
 let msg = await conn.sendMessage(m.chat, { image: { url: yt_play[0].image }, caption: ikratos1, footer: '.', buttons }, { quoted: m })
 } catch { try {
-  let vid2 = await (await fetch(`https://api.lolhuman.xyz/api/ytsearch?apikey=${lolkeysapi}&query=${text}`)  ).json();
+  let vid2 = await (await fetch(`https://api.lolhuman.xyz/api/ytsearch?apikey=85faf717d0545d14074659ad&query=${text}`)  ).json();
   let { videoId, title, views, published, thumbnail } = await vid2.result[0];
   const url = "https://www.youtube.com/watch?v=" + videoId;
-  let ytLink = await fetch(`https://api.lolhuman.xyz/api/ytplay2?apikey=${lolkeysapi}&query=${text}`);
+  let ytLink = await fetch(`https://api.lolhuman.xyz/api/ytplay2?apikey=85faf717d0545d14074659ad&query=${text}`);
   let jsonn = await ytLink.json();
   let aud = await jsonn.result.audio;
   let icapt = `📌 *Title:* ${title}
@@ -82,7 +82,7 @@ let msg = await conn.sendMessage(m.chat, { image: { url: yt_play[0].image }, cap
 👀 *Views:* ${views}
 🔗 *Url:* ${url}`;
 let buttons = [{ buttonText: { displayText: '🎶 Audio' }, buttonId: `${usedPrefix}opta ${url}` }, { buttonText: { displayText: '🎥 Video' }, buttonId: `${usedPrefix}optv ${url}` }];
-let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, icapt: ikratos1, footer: 'Follow me on instagram:\n\tfacebook.com/NasrullahMachi', buttons }, { quoted: m })
+let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, icapt: ikratos1, footer: 'Follow me on facebook:\n\tfacebook.com/NasrullahMachi', buttons }, { quoted: m })
 conn.sendMessage(
     m.chat,
     {
@@ -109,7 +109,7 @@ if (!text) throw `Use example ${usedPrefix}${command} arcade`
   `
   let buttons = [{ buttonText: { displayText: '🎶 Audio' }, buttonId: `${usedPrefix}opta ${url}` }, { buttonText: { displayText: '🎥 Video' }, buttonId: `${usedPrefix}optv ${url}` }]
   await m.react('▶️')
-  let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: capt, footer: 'Follow me on Facebook:\n\tfacebook.com/NasrullahMachi', buttons }, { quoted: m })
+  let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: capt: 'Follow me on Facebook:\n\tfacebook.com/NasrullahMachi', buttons }, { quoted: m })
   // if (durationS > 4000) return conn.sendMessage(m.chat, { text: `*Download:* ${await shortUrl(ytLink)}\n\n_Duration too long..._` }, { quoted: msg })
      }
    }

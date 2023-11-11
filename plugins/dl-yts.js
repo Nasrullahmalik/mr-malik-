@@ -12,7 +12,7 @@ try {
   let depat = ikratosytr.all
   let listSections2 = []
   Object.values(depat).map((v, index) => {
-    listSections2.push([index + ' ' + `${v.title}`, [
+    listSections2.push([index +  `${v.title}`, [
             ['Video🎧', usedPrefix + 'ytmp4 ' + `${v.url}` , '\n⌚ *Duration:* ' + `${v.timestamp}` + '\n📎 *Url:* ' + `${v.url}`],
             ['Audio 🎧', usedPrefix + 'ytmp3 ' + `${v.url}` + ' yes', '\n⌚ *Duration:* ' + `${v.timestamp}` +  '\n📎 *Url:* ' + `${v.url}`]
           ]])
@@ -23,7 +23,7 @@ try {
     let dapet = cari.video
     let listSections = []
   Object.values(dapet).map((v, index) => {
-  listSections.push([index + ' ' + v.title, [
+  listSections.push([index + v.title, [
          ['Video🎧', usedPrefix + 'ytmp4 ' + v.url , '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url],
          ['Audio 🎧', usedPrefix + 'ytmp3 ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
         ]])
