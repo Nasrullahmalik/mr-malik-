@@ -12,24 +12,24 @@ try {
   let depat = ikratosytr.all
   let listSections2 = []
   Object.values(depat).map((v, index) => {
-    listSections2.push([index + ' ' + cmenub + ' ' + `${v.title}`, [
+    listSections2.push([index + ' ' + `${v.title}`, [
             ['Video🎧', usedPrefix + 'ytmp4 ' + `${v.url}` , '\n⌚ *Duration:* ' + `${v.timestamp}` + '\n📎 *Url:* ' + `${v.url}`],
             ['Audio 🎧', usedPrefix + 'ytmp3 ' + `${v.url}` + ' yes', '\n⌚ *Duration:* ' + `${v.timestamp}` +  '\n📎 *Url:* ' + `${v.url}`]
           ]])
     })
-  return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886`, `${fig}`, `YouTube Search 🔎`, listSections2, m)
+  return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886`, `YouTube Search 🔎`, listSections2, m)
 } catch {
   let cari = await youtubeSearch(`${text}`)
     let dapet = cari.video
     let listSections = []
   Object.values(dapet).map((v, index) => {
-  listSections.push([index + ' ' + cmenub + ' ' + v.title, [
+  listSections.push([index + ' ' + v.title, [
          ['Video🎧', usedPrefix + 'ytmp4 ' + v.url , '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url],
          ['Audio 🎧', usedPrefix + 'ytmp3 ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
         ]])
  })
  await	m.react('🔀')
- return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-Malik Owner: +923494757886`, `${fig}`, `YouTube Search 🔎`, listSections, m)
+ return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-Malik Owner: +923494757886`, `YouTube Search 🔎`, listSections, m)
  } }
 handler.help = ['ytsearch <query>']
 handler.tags = ['internet']

@@ -69,7 +69,7 @@ try {
 ⏯️ *Channel:* ${yt_play[0].author.url}
 🔗 *Url:* ${yt_play[0].url}`.trim();
 let buttons = [{ buttonText: { displayText: '🎶 Audio' }, buttonId: `${usedPrefix}opta ${url}` }, { buttonText: { displayText: '🎥 Video' }, buttonId: `${usedPrefix}optv ${url}` }] 
-let msg = await conn.sendMessage(m.chat, { image: { url: yt_play[0].image }, caption: ikratos1, footer: 'Follow me on instagram:\n\tinstagram.com/sla.sher_', buttons }, { quoted: m })
+let msg = await conn.sendMessage(m.chat, { image: { url: yt_play[0].image }, caption: ikratos1, footer: '.', buttons }, { quoted: m })
 } catch { try {
   let vid2 = await (await fetch(`https://api.lolhuman.xyz/api/ytsearch?apikey=${lolkeysapi}&query=${text}`)  ).json();
   let { videoId, title, views, published, thumbnail } = await vid2.result[0];
@@ -82,7 +82,7 @@ let msg = await conn.sendMessage(m.chat, { image: { url: yt_play[0].image }, cap
 👀 *Views:* ${views}
 🔗 *Url:* ${url}`;
 let buttons = [{ buttonText: { displayText: '🎶 Audio' }, buttonId: `${usedPrefix}opta ${url}` }, { buttonText: { displayText: '🎥 Video' }, buttonId: `${usedPrefix}optv ${url}` }];
-let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, icapt: ikratos1, footer: 'Follow me on instagram:\n\tinstagram.com/sla.sher_', buttons }, { quoted: m })
+let msg = await conn.sendMessage(m.chat, { image: { url: thumbnail }, icapt: ikratos1, footer: 'Follow me on instagram:\n\tfacebook.com/NasrullahMachi', buttons }, { quoted: m })
 conn.sendMessage(
     m.chat,
     {
