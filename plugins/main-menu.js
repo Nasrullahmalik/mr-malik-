@@ -5,7 +5,6 @@ let pp = './Abhi.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
-│ _${usedPrefix}uptime_
 │ _${usedPrefix}alive_
 │ _${usedPrefix}owner_
 │ _${usedPrefix}bot_
@@ -14,6 +13,7 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 ╰─────────────⦁
 
 ╭───❮ *☆☆🇵🇰☆☆* ❯
+│ _${usedPrefix}video_
 │ _${usedPrefix}song_
 │ _${usedPrefix}play_
 │ _${usedPrefix}yts_
@@ -22,12 +22,12 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}pinterest_
 │ _${usedPrefix}mediafire *link*_
 │ _${usedPrefix}gdrive *link*_
-│ _${usedPrefix}gitclone *link*_
 │ _${usedPrefix}twitter *link*_
 │ _${usedPrefix}tiktok *link*_
 │ _${usedPrefix}tiktokstalk_
-│ _${usedPrefix}spotify_
 │ _${usedPrefix}fb *link*_
+│ _${usedPrefix}.apk search *app name*_
+│ _${usedPrefix}.apk app *link*_
 ╰─────────────⦁
 
 ${readMore}
