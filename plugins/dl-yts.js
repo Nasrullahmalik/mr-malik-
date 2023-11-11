@@ -15,8 +15,10 @@ try {
             ['Video🎧', usedPrefix + 'ytmp4 ' + `${v.url}` , '\n⌚ *Duration:* ' + `${v.timestamp}` + '\n📎 *Url:* ' + `${v.url}`],
             ['Audio 🎧', usedPrefix + 'ytmp3 ' + `${v.url}` + ' yes', '\n⌚ *Duration:* ' + `${v.timestamp}` +  '\n📎 *Url:* ' + `${v.url}`]
           ]])
-    });
-  return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886`, `YouTube Search 🔎`, listSections2, m);
+          return  '*───「 Youtube Search 」───* Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886 YouTube Search 🔎';
+          
+   }).join('\n\n');
+    m.reply('${listSections2}');
 } catch {
   let cari = await youtubeSearch('${text}');
     let dapet = cari.video;
@@ -26,9 +28,10 @@ try {
          ['Video🎧', usedPrefix + 'ytmp4 ' + v.url , '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url],
          ['Audio 🎧', usedPrefix + 'ytmp3 ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
         ]])
- });
+ return  '*───「 Youtube Search 」───* Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886 YouTube Search 🔎';
  
- return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-Malik Owner: +923494757886`, `YouTube Search 🔎`, listSections, m);
+ }).join('\n\n');
+ m.reply('${listSections2}');
  } }
 handler.help = ['ytsearch <query>'];
 handler.tags = ['internet'];
