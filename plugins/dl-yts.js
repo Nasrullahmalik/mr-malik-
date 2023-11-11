@@ -7,7 +7,6 @@ let name = await conn.getName(m.sender);
 try {
   if (!text) throw (`Where is the text?\nExample; *${usedPrefix + command}* arcade`);
    m.reply(m.chat, global.wait, m);
- 	m.react('🔀');
   let ikratosytr = await yts(text);
   let depat = ikratosytr.all;
   let listSections2 = [];
@@ -28,7 +27,7 @@ try {
          ['Audio 🎧', usedPrefix + 'ytmp3 ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
         ]])
  });
- 	m.react('🔀');
+ 
  return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-Malik Owner: +923494757886`, `YouTube Search 🔎`, listSections, m);
  } }
 handler.help = ['ytsearch <query>'];

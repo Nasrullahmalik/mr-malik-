@@ -4,7 +4,7 @@ let handler = async (m, { conn, args, text, usedPrefix, command }) => {
   let chat = global.db.data.chats[m.chat];
   if (!text) throw `✳️ What do you want to search?\n📌 Usage: *${usedPrefix + command} <search>*\n\nExample: Hot desi bhabi or you can use a link as well\nExample: .xnxx link *`;
 
-  m.react('⌛');
+ 
     if (!text) throw 'Please provide a search query or a valid Xvideos URL.';
   
     // Check if the input is a valid Xvideos URL
