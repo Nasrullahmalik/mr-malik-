@@ -3,40 +3,41 @@ import { youtubeSearch } from '@bochilteam/scraper'
 import yts from 'yt-search'
 
 let handler = async(m, { conn, usedPrefix, text, args, command }) => {
-let name = await conn.getName(m.sender)
+let name = await conn.getName(m.sender);
 try {
-  if (!text) throw `Where is the text?\nExample; *${usedPrefix + command}* arcade`
-  await conn.reply(m.chat, global.wait, m)
-  await	m.react('🔀')
-  let ikratosytr = await yts(text)
-  let depat = ikratosytr.all
-  let listSections2 = []
+  if (!text) throw (`Where is the text?\nExample; *${usedPrefix + command}* arcade`);
+  await conn.reply(m.chat, global.wait, m);
+  await	m.react('🔀');
+  let ikratosytr = await yts(text);
+  let depat = ikratosytr.all;
+  let listSections2 = [];
   Object.values(depat).map((v, index) => {
     listSections2.push([index +  `${v.title}`, [
             ['Video🎧', usedPrefix + 'ytmp4 ' + `${v.url}` , '\n⌚ *Duration:* ' + `${v.timestamp}` + '\n📎 *Url:* ' + `${v.url}`],
             ['Audio 🎧', usedPrefix + 'ytmp3 ' + `${v.url}` + ' yes', '\n⌚ *Duration:* ' + `${v.timestamp}` +  '\n📎 *Url:* ' + `${v.url}`]
-          ]])
+          ]]);
     })
-  return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886`, `YouTube Search 🔎`, listSections2, m)
+  return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-malil\nowner: +92 3494757886`, `YouTube Search 🔎`, listSections2, m);
 } catch {
-  let cari = await youtubeSearch(`${text}`)
-    let dapet = cari.video
-    let listSections = []
+  let cari = await youtubeSearch('${text}');
+    let dapet = cari.video;
+    let listSections = [];
   Object.values(dapet).map((v, index) => {
   listSections.push([index + v.title, [
          ['Video🎧', usedPrefix + 'ytmp4 ' + v.url , '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url],
          ['Audio 🎧', usedPrefix + 'ytmp3 ' + v.url + ' yes', '\n⌚ *Duration:* ' + v.durationH + '\n⏲️ *Uploaded:* ' + v.publishedTime + '\n *Views:* ' + v.view + '\n📎 *Url:* ' + v.url]
-        ]])
+        ]]);
  })
- await	m.react('🔀')
- return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-Malik Owner: +923494757886`, `YouTube Search 🔎`, listSections, m)
+ await	m.react('🔀');
+ return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nMr-Malik Owner: +923494757886`, `YouTube Search 🔎`, listSections, m);
  } }
-handler.help = ['ytsearch <query>']
-handler.tags = ['internet']
-handler.command = /^yts(earch)?$/i
+handler.help = ['ytsearch <query>'];
+handler.tags = ['internet'];
+handler.command = ['ytsearch', 'yts'];
+
  
  
-export default handler
+export default handler;
  
 
 
