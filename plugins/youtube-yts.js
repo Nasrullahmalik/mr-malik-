@@ -6,7 +6,7 @@ let handler = async(m, { conn, usedPrefix, text, args, command }) => {
 let name = await conn.getName(m.sender)
 try {
   if (!text) throw `Where is the text?\nExample; *${usedPrefix + command}* arcade`
-  await m.reply(m.chat, global.wait, m)
+  await conn.reply(m.chat, global.wait, m)
   await	m.react('🔀')
   let ikratosytr = await yts(text)
   let depat = ikratosytr.all
@@ -17,8 +17,10 @@ try {
             ['Audio 🎧', usedPrefix + 'ytmp3 ' + `${v.url}` + ' yes', '\n⌚ *Duration:* ' + `${v.timestamp}` +  '\n📎 *Url:* ' + `${v.url}`]
           ]])
     })
-  conn.sendFile(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nx-ɢᴇɴ ʙᴏᴛ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +91 95872 10657`, `${fig}`, `YouTube Search 🔎`, listSections2, m)
-} catch {
+    await conn.sendMessage(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nmr-malik • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +92 3494757886`, `${fig}`, `YouTube Search 🔎`, listSections2, m)
+    
+  return 
+  } catch {
   let cari = await youtubeSearch(`${text}`)
     let dapet = cari.video
     let listSections = []
@@ -29,7 +31,8 @@ try {
         ]])
  })
  await	m.react('🔀')
-  conn.sendFile(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nx-ɢᴇɴ ʙᴏᴛ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +91 95872 10657`, `${fig}`, `YouTube Search 🔎`, listSections, m)
+   await conn.sendMessage(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nmr-malik • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +923494757886`, `${fig}`, `YouTube Search 🔎`, listSections, m)
+ return
  } }
 handler.help = ['ytsearch <query>']
 handler.tags = ['internet']
