@@ -25,6 +25,7 @@ global.openAiapi = 'ThZzt3Ox4l786j0g0kaFT3BlbkFJ9BJKJ0xXVHvDwtb0Jz4M'   // Get y
 global.org = '5pCOr5MZ9XFPHUWPP78TBKdx'
 global.APIs = { // API Prefix
   // name: 'https://website'
+  ApiEmpire: 'https://api-brunosobrino.zipponodes.xyz',
   xteam: 'https://api.xteam.xyz', 
   dzx: 'https://api.dhamzxploit.my.id',
   lol: 'https://api.lolhuman.xyz',
