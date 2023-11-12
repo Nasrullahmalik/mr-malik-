@@ -17,7 +17,7 @@ try {
             ['Audio 🎧', usedPrefix + 'ytmp3 ' + `${v.url}` + ' yes', '\n⌚ *Duration:* ' + `${v.timestamp}` +  '\n📎 *Url:* ' + `${v.url}`]
           ]])
     })
-  return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nx-ɢᴇɴ ʙᴏᴛ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +91 95872 10657`, `${fig}`, `YouTube Search 🔎`, listSections2, m)
+  await m.reply(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nx-ɢᴇɴ ʙᴏᴛ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +91 95872 10657`, `${fig}`, `YouTube Search 🔎`, listSections2, m)
 } catch {
   let cari = await youtubeSearch(`${text}`)
     let dapet = cari.video
@@ -29,7 +29,7 @@ try {
         ]])
  })
  await	m.react('🔀')
- return conn.sendList(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nx-ɢᴇɴ ʙᴏᴛ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +91 95872 10657`, `${fig}`, `YouTube Search 🔎`, listSections, m)
+ await m.reply(m.chat, '*───「 Youtube Search 」───*', `Please choose the type below...\n*Your requested text:* ${text}\n\nx-ɢᴇɴ ʙᴏᴛ • ᴍᴜʟᴛɪ ᴅᴇᴠɪᴄᴇ\nowner: +91 95872 10657`, `${fig}`, `YouTube Search 🔎`, listSections, m)
  } }
 handler.help = ['ytsearch <query>']
 handler.tags = ['internet']
