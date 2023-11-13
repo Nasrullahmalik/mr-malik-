@@ -4,8 +4,8 @@ import axios from 'axios'
 
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 
-var data = async axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75616/rsa-vs-afg-42nd-match-icc-cricket-world-cup-2023&timestamp=`+new Date());
-var msg = '';
+var data = await axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75602/nz-vs-sl-41st-match-icc-cricket-world-cup-2023&timestamp=`+new Date());
+var ms
 if (data.title) msg += data.title + `\n`
 if (data.update) msg += `*`+data.update + `*\n\n`
 if (data.current) msg += '*'+data.current + `*\n`
@@ -23,9 +23,8 @@ msg += `${data.recentballs}\n\n`
 msg += `Last wicket ❌ ${data.lastwicket}\n`
 msg += `Run rate %: *${data.runrate}*\n`
 }
-
- m.reply('*Live score updating... 🏏🏏*');
- m.reply(msg);
+await m.reply('*Live score updating... 🏏🏏*');
+await m.reply(msg);
 }
 handler.command = /^score?$/i
 
