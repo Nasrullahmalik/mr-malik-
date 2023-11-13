@@ -107,7 +107,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
         const akuariapi1 = await fetch(`https://api.azz.biz.id/api/bard?q=${text}&key=global`);
         const akuariapijson1 = await akuariapi1.json();
         if (akuariapijson1.respon == 'error' || akuariapijson1.respon == '' || !akuariapijson1.respon) return XD; // causar error undefined para usar otra api
-        const akuariapiresult1 = await translate(`${akuariapijson1.respon}`, {to: 'es', autoCorrect: true});
+        const akuariapiresult1 = await translate(`${akuariapijson1.respon}`, {to: 'en', autoCorrect: false});
         m.reply(`${akuariapiresult1.text}`.trim());
     } catch {
         throw `*[❗] 𝙴𝚁𝚁𝙾𝚁, 𝚅𝚄𝙴𝙻𝚅𝙰 𝙰 𝙸𝙽𝚃𝙴𝙽𝚃𝙰𝚁𝙻𝙾*`;
