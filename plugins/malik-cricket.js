@@ -4,11 +4,11 @@ import axios from 'axios'
 
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 
-var data = await axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75602/nz-vs-sl-41st-match-icc-cricket-world-cup-2023&timestamp=`+new Date());
-var msg = '';
-if (data.title) msg += data.title + `\n`
-if (data.update) msg += `*`+data.update + `*\n\n`
-if (data.current) msg += '*'+data.current + `*\n`
+const data = await axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75602/nz-vs-sl-41st-match-icc-cricket-world-cup-2023&timestamp=`+new Date());
+const msg = '';
+if (data.title)  msg += data.title + `\n`
+if (data.update)  msg += `*`+data.update + `*\n\n`
+if (data.current)  msg += '*'+data.current + `*\n`
 if (data.batsman) msg += `Batsman 🏏: *${data.batsman} - ${data.batsmanrun} ${data.ballsfaced}\n`
 if (data.sr) msg +=`Strike rate: ${data.sr}\n`
 if (data.batsman) msg +=`Batsman 2 🏏: *${data.batsmantwo}* - ${data.batsmantworun} ${data.batsmantwoballsfaced}\n`
@@ -17,14 +17,14 @@ if (data.batsman) msg += `Bowler ⚾: *${data.bowler}*\n`
 if (data.batsman) msg +=`Over: ${data.bowlerover}\n`
 if (data.batsman) msg += `Runs: ${data.bowlerruns}\n`
 if (data.batsman) msg +=`Wickets: ${data.bowlerwickets}\n`
-if (data.batsman) msg+=`Bowler 2: ${data.bowlertwo}\n\n`
+if (data.batsman) msg +=`Bowler 2: ${data.bowlertwo}\n\n`
 if (data.batsman) {
 msg += `${data.recentballs}\n\n`
 msg += `Last wicket ❌ ${data.lastwicket}\n`
 msg += `Run rate %: *${data.runrate}*\n`
 }
-await m.reply('*Live score updating... 🏏🏏*');
-await m.reply(msg);
+await m.reply('*Live score updating... 🏏🏏*')
+await m.reply(msg)
 }
 handler.command = /^score?$/i
 
