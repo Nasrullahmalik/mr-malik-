@@ -1,11 +1,11 @@
 
 import axios from "axios"
 let handler = async (m, { args }) => {
-if (!args[0]) throw "*Put Cricbuzz Live match link here*"
+
 try {
-const response = axios.get(`https://crickbuzz.vercel.app/score?url=${args}&timestamp=`+new Date())
+const response = axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75640/ind-vs-nz-1st-semi-final-1st-v-4th-icc-cricket-world-cup-2023`)
 const res = await response
-const title = res.data.title
+const title = data.title
 const update = res.data.update
 const current = res.data.current
 const batsman = res.data.batsman
