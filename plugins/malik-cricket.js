@@ -1,31 +1,36 @@
 //created by souravkl11 updated by xIKRATOSx
 import fetch from 'node-fetch'
-import axios from 'axios'
-
-let handler = async (m, { conn, usedPrefix, text, args, command }) => {
-
-const data = await axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75602/nz-vs-sl-41st-match-icc-cricket-world-cup-2023&timestamp=`+new Date());
-const msg = '';
-if (data.title)  const msg += data.title + `\n`;
-if (data.update) const msg += `*`+data.update + `*\n\n`;
-if (data.current) const msg += '*'+data.current + `*\n`;
-if (data.batsman) const msg += `Batsman 🏏: *${data.batsman} - ${data.batsmanrun} ${data.ballsfaced}\n`;
-if (data.sr) const msg +=`Strike rate: ${data.sr}\n`
-if (data.batsman) const msg +=`Batsman 2 🏏: *${data.batsmantwo}* - ${data.batsmantworun} ${data.batsmantwoballsfaced}\n`;
-if (data.batsman) const msg += `Strike rate: ${data.batsmantwosr}\n\n`;
-if (data.batsman) const msg += `Bowler ⚾: *${data.bowler}*\n`;
-if (data.batsman) const msg +=`Over: ${data.bowlerover}\n`;
-if (data.batsman) const msg += `Runs: ${data.bowlerruns}\n`;
-if (data.batsman) const msg +=`Wickets: ${data.bowlerwickets}\n`;
-if (data.batsman) const msg +=`Bowler 2: ${data.bowlertwo}\n\n`;
-if (data.batsman) {
-const msg += `${data.recentballs}\n\n`;
-const msg += `Last wicket ❌ ${data.lastwicket}\n`;
-const msg += `Run rate %: *${data.runrate}*\n`;
-}
-await m.reply('*Live score updating... 🏏🏏*')
-await m.reply(msg)
-}
+import axios from "axios"
+let handler = async (m, { args }) => {
+if (!args[0]) throw "*Put Cricbuzz Live match link here*"
+try {
+const response = await axios.get(`https://crickbuzz.vercel.app/score?url=${args}&timestamp=`+new Date())
+const res = await response
+const title = res.data.title
+const update = res.data.update
+const current = res.data.current
+const batsman = res.data.batsman
+const batsmanrun = res.data.batsmanrun
+const strr = res.data.sr
+const ballsfaced = res.data.ballsfaced
+const battwo = res.data.batsmantwo
+const battworun = res.data.batsmantworun
+const battwoballsfaced = res.data.batsmantwoballsfaced
+const battwosr = res.data.batsmantwosr
+const bowler = res.data.bowler
+const bover = res.data.bowlerover
+const brun = res.data.bowlerruns
+const bwicket = res.data.bowlerwickets
+const btwo = res.data.bowlertwo
+const recentb = res.data.recentballs
+const lastw = res.data.lastwicket
+const runrate = res.data.runrate
+ m.reply('*Live score updating... 🏏🏏*')
+ m.reply('${title}\n *${update}*\n\n * ${current}*\nBatsman 🏏: *${batsman} - ${batsmanrun} ${ballsfaced}\n Strike rate: ${strr}\n Batsman 2 🏏: *${battwo}* - ${battworun} ${battwoballsfaced}\n Strike rate: ${battwosr}\n\nBowler ⚾: *${bowler}*\nOver: ${bover}\nRuns: ${brun}\nWickets: ${bwickets}\nBowler 2: ${btwo}\n\n${recentb}\n\nLast wicket ❌ ${lastw}\nRun rate %: *${runrate}*\n')
+}catch {
+return "*ERROR*"}}
+handler.help = ['.score *<Link>*']
+handler.tags = ['malik']
 handler.command = /^score?$/i
 
 export default handler
