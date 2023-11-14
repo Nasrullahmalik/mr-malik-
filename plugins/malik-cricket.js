@@ -1,30 +1,29 @@
-//created by souravkl11 updated by xIKRATOSx
-import fetch from 'node-fetch'
+
 import axios from "axios"
 let handler = async (m, { args }) => {
 if (!args[0]) throw "*Put Cricbuzz Live match link here*"
 try {
 const response = axios.get(`https://crickbuzz.vercel.app/score?url=${args}&timestamp=`+new Date())
 const res = await response
-const title = res.title
-const update = res.update
-const current = res.current
-const batsman = res.batsman
-const batsmanrun = res.batsmanrun
-const strr = res.sr
-const ballsfaced = res.ballsfaced
-const battwo = res.batsmantwo
-const battworun = res.batsmantworun
-const battwoballsfaced = res.batsmantwoballsfaced
-const battwosr = res.batsmantwosr
-const bowler = res.bowler
-const bover = res.bowlerover
-const brun = res.bowlerruns
-const bwicket = res.bowlerwickets
-const btwo = res.bowlertwo
-const recentb = res.recentballs
-const lastw = res.lastwicket
-const runrate = res.runrate
+const title = res.data.title
+const update = res.data.update
+const current = res.data.current
+const batsman = res.data.batsman
+const batsmanrun = res.data.batsmanrun
+const strr = res.data.sr
+const ballsfaced = res.data.ballsfaced
+const battwo = res.data.batsmantwo
+const battworun = res.data.batsmantworun
+const battwoballsfaced = res.data.batsmantwoballsfaced
+const battwosr = res.data.batsmantwosr
+const bowler = res.data.bowler
+const bover = res.data.bowlerover
+const brun = res.data.bowlerruns
+const bwicket = res.data.bowlerwickets
+const btwo = res.data.bowlertwo
+const recentb = res.data.recentballs
+const lastw = res.data.lastwicket
+const runrate = res.data.runrate
 const upmd = `${title}\n *${update}*\n\n * ${current}*\nBatsman 🏏: *${batsman} - ${batsmanrun} ${ballsfaced}\n Strike rate: ${strr}\n Batsman 2 🏏: *${battwo}* - ${battworun} ${battwoballsfaced}\n Strike rate: ${battwosr}\n\nBowler ⚾: *${bowler}*\nOver: ${bover}\nRuns: ${brun}\nWickets: ${bwickets}\nBowler 2: ${btwo}\n\n${recentb}\n\nLast wicket ❌ ${lastw}\nRun rate %: *${runrate}*\n`
  m.reply('*Live score updating... 🏏🏏*')
  m.reply(upmd)
