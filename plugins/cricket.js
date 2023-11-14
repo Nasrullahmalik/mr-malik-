@@ -4,7 +4,7 @@ import axios from "axios"
 let handler = async (m, { args }) => {
 if (!args[0]) throw "*Put Cricbuzz Live match link here*"
 try {
-var dataponse = axios.get(`https://crickbuzz.vercel.app/score?url=${args}&timestamp=`+new Date())
+var dataponse = axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75640/ind-vs-nz-1st-semi-final-1st-v-4th-icc-cricket-world-cup-2023&timestamp=`+new Date())
 var data = await dataponse
 var title = data.title
 var update = data.update
@@ -25,13 +25,14 @@ var btwo = data.bowlertwo
 var recentb = data.recentballs
 var lastw = data.lastwicket
 var runrate = data.runrate
+var upmd = '!! ${title}\n *${update}*\n\n * ${current}*\nBatsman 🏏: *${batsman} - ${batsmanrun} ${ballsfaced}\n Strike rate: ${strr}\n Batsman 2 🏏: *${battwo}* - ${battworun} ${battwoballsfaced}\n Strike rate: ${battwosr}\n\nBowler ⚾: *${bowler}*\nOver: ${bover}\nRuns: ${brun}\nWickets: ${bwickets}\nBowler 2: ${btwo}\n\n${recentb}\n\nLast wicket ❌ ${lastw}\nRun rate %: *${runrate}*\n'
  m.reply('*Live score updating... 🏏🏏*')
- m.reply('${title}\n *${update}*\n\n * ${current}*\nBatsman 🏏: *${batsman} - ${batsmanrun} ${ballsfaced}\n Strike rate: ${strr}\n Batsman 2 🏏: *${battwo}* - ${battworun} ${battwoballsfaced}\n Strike rate: ${battwosr}\n\nBowler ⚾: *${bowler}*\nOver: ${bover}\nRuns: ${brun}\nWickets: ${bwickets}\nBowler 2: ${btwo}\n\n${recentb}\n\nLast wicket ❌ ${lastw}\nRun rate %: *${runrate}*\n')
+ m.reply(upmd)
 }catch {
 return "*ERROR*"}}
 handler.help = ['.score *<Link>*']
 handler.tags = ['malik']
-handler.command = ['cricket', 'score']
+handler.command = ['cricket2', 'score2']
 
 export default handler
 
