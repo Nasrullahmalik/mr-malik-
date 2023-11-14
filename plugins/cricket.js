@@ -4,27 +4,27 @@ import axios from "axios"
 let handler = async (m, { args }) => {
 if (!args[0]) throw "*Put Cricbuzz Live match link here*"
 try {
-const response = axios.get(`https://crickbuzz.vercel.app/score?url=${args}&timestamp=`+new Date())
-const res = await response
-const title = res.title
-const update = res.update
-const current = res.current
-const batsman = res.batsman
-const batsmanrun = res.batsmanrun
-const strr = res.sr
-const ballsfaced = res.ballsfaced
-const battwo = res.batsmantwo
-const battworun = res.batsmantworun
-const battwoballsfaced = res.batsmantwoballsfaced
-const battwosr = res.batsmantwosr
-const bowler = res.bowler
-const bover = res.bowlerover
-const brun = res.bowlerruns
-const bwicket = res.bowlerwickets
-const btwo = res.bowlertwo
-const recentb = res.recentballs
-const lastw = res.lastwicket
-const runrate = res.runrate
+var dataponse = axios.get(`https://crickbuzz.vercel.app/score?url=${args}&timestamp=`+new Date())
+var data = await dataponse
+var title = data.title
+var update = data.update
+var current = data.current
+var batsman = data.batsman
+var batsmanrun = data.batsmanrun
+var strr = data.sr
+var ballsfaced = data.ballsfaced
+var battwo = data.batsmantwo
+var battworun = data.batsmantworun
+var battwoballsfaced = data.batsmantwoballsfaced
+var battwosr = data.batsmantwosr
+var bowler = data.bowler
+var bover = data.bowlerover
+var brun = data.bowlerruns
+var bwicket = data.bowlerwickets
+var btwo = data.bowlertwo
+var recentb = data.recentballs
+var lastw = data.lastwicket
+var runrate = data.runrate
  m.reply('*Live score updating... 🏏🏏*')
  m.reply('${title}\n *${update}*\n\n * ${current}*\nBatsman 🏏: *${batsman} - ${batsmanrun} ${ballsfaced}\n Strike rate: ${strr}\n Batsman 2 🏏: *${battwo}* - ${battworun} ${battwoballsfaced}\n Strike rate: ${battwosr}\n\nBowler ⚾: *${bowler}*\nOver: ${bover}\nRuns: ${brun}\nWickets: ${bwickets}\nBowler 2: ${btwo}\n\n${recentb}\n\nLast wicket ❌ ${lastw}\nRun rate %: *${runrate}*\n')
 }catch {
@@ -42,11 +42,11 @@ export default handler
 
 let handler = async(m, { conn, command, text, usedPrefix }) => {
   let { groupDesc, reply } = msgInfoObj;
-  const descErrorMessage = `❌ ERROR
+  var descErrorMessage = `❌ ERROR
 - Group description is empty.
 - Put match ID in starting of group description. 
 - Get match ID from cricbuzz today match url.
-- example: https://www.cricbuzz.com/live-cricket-scores/37572/mi-vs-kkr-34th-match-indian-premier-league-2021 
+- example: https://www.cricbuzz.com/live-cricket-scodata/37572/mi-vs-kkr-34th-match-indian-premier-league-2021 
 - so match ID is 37572 !
 # If you've put correct match ID in description starting and still facing this error then contact developer wa.me/923470027813\nwa.me/19293514545`;
 
@@ -61,11 +61,11 @@ let handler = async(m, { conn, command, text, usedPrefix }) => {
     return;
   }
 try {
-  let response = await getCricketScore(matchId);
-  await conn.sendMessage(m.chat, { text: response }, { quoted: m });
+  let dataponse = await getCricketScore(matchId);
+  await conn.sendMessage(m.chat, { text: dataponse }, { quoted: m });
 } catch {
-  let response2 = await getScoreCard(matchId);
-  await conn.sendMessage(m.chat, { text: response2 }, { quoted: m });
+  let dataponse2 = await getScoreCard(matchId);
+  await conn.sendMessage(m.chat, { text: dataponse2 }, { quoted: m });
 }
 }
 handler.command = /^score1$/i*/
