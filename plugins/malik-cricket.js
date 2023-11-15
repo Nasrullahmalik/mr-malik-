@@ -3,27 +3,27 @@ import axios from "axios"
 let handler = async (m, { args }) => {
 
 try {
-const response = axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75640/ind-vs-nz-1st-semi-final-1st-v-4th-icc-cricket-world-cup-2023`)
-const res = await response
+let response = await axios.get(`https://crickbuzz.vercel.app/score?url=https://m.cricbuzz.com/cricket-commentary/75640/ind-vs-nz-1st-semi-final-1st-v-4th-icc-cricket-world-cup-2023`)
+let data = await response.json()
 const title = data.title
-const update = res.data.update
-const current = res.data.current
-const batsman = res.data.batsman
-const batsmanrun = res.data.batsmanrun
-const strr = res.data.sr
-const ballsfaced = res.data.ballsfaced
-const battwo = res.data.batsmantwo
-const battworun = res.data.batsmantworun
-const battwoballsfaced = res.data.batsmantwoballsfaced
-const battwosr = res.data.batsmantwosr
-const bowler = res.data.bowler
-const bover = res.data.bowlerover
-const brun = res.data.bowlerruns
-const bwicket = res.data.bowlerwickets
-const btwo = res.data.bowlertwo
-const recentb = res.data.recentballs
-const lastw = res.data.lastwicket
-const runrate = res.data.runrate
+const update = data.update
+const current = data.current
+const batsman = data.batsman
+const batsmanrun = data.batsmanrun
+const strr = data.sr
+const ballsfaced = data.ballsfaced
+const battwo = batsmantwo
+const battworun = data.batsmantworun
+const battwoballsfaced = data.batsmantwoballsfaced
+const battwosr = data.batsmantwosr
+const bowler = data.bowler
+const bover = data.bowlerover
+const brun = data.bowlerruns
+const bwicket = data.bowlerwickets
+const btwo = data.bowlertwo
+const recentb = data.recentballs
+const lastw = data.lastwicket
+const runrate = data.runrate
 const upmd = `${title}\n *${update}*\n\n * ${current}*\nBatsman 🏏: *${batsman} - ${batsmanrun} ${ballsfaced}\n Strike rate: ${strr}\n Batsman 2 🏏: *${battwo}* - ${battworun} ${battwoballsfaced}\n Strike rate: ${battwosr}\n\nBowler ⚾: *${bowler}*\nOver: ${bover}\nRuns: ${brun}\nWickets: ${bwickets}\nBowler 2: ${btwo}\n\n${recentb}\n\nLast wicket ❌ ${lastw}\nRun rate %: *${runrate}*\n`
  m.reply('*Live score updating... 🏏🏏*')
  m.reply(upmd)
