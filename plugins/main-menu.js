@@ -26,12 +26,13 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}tiktok *link*_
 │ _${usedPrefix}tiktokstalk_
 │ _${usedPrefix}fb *link*_
-│ _${usedPrefix}.apk search *app name*_
-│ _${usedPrefix}.apk app *link*_
+│ _${usedPrefix}apk search *app name*_
+│ _${usedPrefix}apk app *link*_
 ╰─────────────⦁
 
 ${readMore}
 ╭───❮ *☆☆ 🇵🇰 ☆☆* ❯
+│ _${usedPrefix}.openai *text*_
 │ _${usedPrefix}toanime_
 │ _${usedPrefix}tomp3_
 │ _${usedPrefix}toimg_
