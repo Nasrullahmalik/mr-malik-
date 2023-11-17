@@ -28,11 +28,12 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}fb *link*_
 │ _${usedPrefix}apk search *app name*_
 │ _${usedPrefix}apk app *link*_
+│ _${usedPrefix}meme *get random meme*_
 ╰─────────────⦁
 
 ${readMore}
 ╭───❮ *☆☆ 🇵🇰 ☆☆* ❯
-│ _${usedPrefix}.openai *text*_
+│ _${usedPrefix}openai *text*_
 │ _${usedPrefix}toanime_
 │ _${usedPrefix}tomp3_
 │ _${usedPrefix}toimg_
@@ -61,6 +62,7 @@ ${readMore}
 ╰─────────────⦁
 
 ╭───❮ *☆☆☆ 🇵🇰 ☆☆☆* ❯
+│ _${usedPrefix}logo_
 │ _${usedPrefix}sticker_
 │ _${usedPrefix}take_
 │ _${usedPrefix}smaker_
