@@ -14,6 +14,7 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 
 ╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}video_
+│ _${usedPrefix}video2_
 │ _${usedPrefix}song_
 │ _${usedPrefix}play_
 │ _${usedPrefix}yts_
@@ -73,7 +74,6 @@ ${readMore}
 
 ╭───❮ *☆☆☆ 🇵🇰🇵🇰🇵🇰🇵🇰* ❯
 │ _${usedPrefix}autosticker_
-│ _${usedPrefix}pdf_
 │ _${usedPrefix}whatmusic_
 │ _${usedPrefix}tempmail_
 │ _${usedPrefix}checkmail_
@@ -92,7 +92,6 @@ ${readMore}
 │ _${usedPrefix}fancy_
 │ _${usedPrefix}weather_
 │ _${usedPrefix}itunes_
-│ _${usedPrefix}technews_
 ╰─────────────⦁
 
 
@@ -100,11 +99,11 @@ ${readMore}
 │      ◇○○○○○○○◇
 │     《《《♡♡♡》》》  
 │     Bot
-│   Created By 
-│     NASRULLAH
+│ 💡 Created By 
+│ 📎 *NASRULLAH*
 ╰────────────⦁`  
 conn.sendFile(m.chat, pp, 'perfil.jpg', lkr, m, false, { mentions: [who] })
-m.react('📃')
+m.react('⌨')
 }
 handler.help = ['allmenu']
 handler.tags = ['main']
