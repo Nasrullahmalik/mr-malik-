@@ -5,9 +5,8 @@ import ytdl from 'ytdl-core';
 import axios from 'axios';
 import {bestFormat, getUrlDl} from '../lib/y2dl.js';
 const handler = async (m, {conn, args, usedPrefix, command}) => {
-  if (!args[0]) throw '*[❗] Use YouTube link.*';
+  if (!args[0]) throw '*[❗] Uso incorrecto del comando, ingrese un enlace / link de YouTube.*';
   let enviando;
-  let global.videoList = []
   if (enviando) return  
       enviando = true    
   let youtubeLink = '';
@@ -23,11 +22,11 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
             youtubeLink = matchingItem.urls[index];
           } else {
             enviando = false  
-            throw `*[❗] No se encontro un enlace para ese numero, por favor ingrese un numero entre el 1 y el ${matchingItem.urls.length}*`;
-          }
+            throw `*[❗] There was no link for that number, please enter a number between 1 and ${matchingitem.urls.length}*`; 
+            }
         } else {
           enviando = false  
-          throw `*[❗] Para poder hacer uso del comando de esta forma (${usedPrefix + command} <numero>), por favor realiza la busqueda de videos con el comando ${usedPrefix}playlist <texto>*`;
+          throw `*[❗] To be able to use the command in this way(${usedPrefix + command} <numero>),  ${usedPrefix}playlist <texto>*`;
         }
       } else {
         enviando = false  
@@ -35,7 +34,7 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
       }
     }
   }
-  const { key } = await m.reply(`*_⏳Sᴇ ᴇsᴛᴀ ᴘʀᴏᴄᴇsᴀɴᴅᴏ Sᴜ ᴠɪᴅᴇᴏ...⏳_*\n\n*◉ Sɪ Sᴜ ᴠɪᴅᴇᴏ ɴᴏ ᴇs ᴇɴᴠɪᴀᴅᴏ, ᴘʀᴜᴇʙᴇ ᴄᴏɴ ᴇʟ ᴄᴏᴍᴀɴᴅᴏ #playdoc ᴏ #play.2 ᴏ #ytmp4doc ◉*`);
+  const { key } = await m.reply(`*_⏳Please wait, Mr malik ᴘʀᴏᴄᴇssing ur ᴠɪᴅᴇᴏ...⏳_*\n\n*◉ ᴠɪᴅᴇᴏ  ᴄᴏᴍᴀɴᴅ #playdoc ᴏ #play.2 ᴏ #ytmp4doc ◉*`);
   try {
     const formats = await bestFormat(youtubeLink, 'video');
     const buff = await getBuffer(formats.url);
@@ -47,11 +46,11 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
     const roundedFileSizeInMB = fileSizeInMB.toFixed(2);
    if (fileSizeInMB > 100) {
     await conn.sendMessage(m.chat, {document: buff, caption: `*▢ Titulo:* ${ttl_1}\n*▢ Peso Del Video:* ${roundedFileSizeInMB} MB`, fileName: ttl_1 + '.mp4', mimetype: 'video/mp4'}, {quoted: m});
-    await conn.sendMessage(m.chat, {text: `*[ ✔ ] Video descargado y enviado exitosamente.*\n\n*—◉ Se envío en formato de docuemnto debido a que el video pesa ${roundedFileSizeInMB} MB y supera el limite establecido por WhatsApp.*\n*◉ Titulo:* ${ttl_1}`, edit: key}, {quoted: m});
+    await conn.sendMessage(m.chat, {text: `*[ ✔ ] Video downloded and successfully sent.*\n\n*—◉ send in document format because the video length ${roundedFileSizeInMB} MB and exceeds the limit  by WhatsApp..*\n*◉ Tite:* ${ttl_1}`, edit: key}, {quoted: m});
     enviando = false
    } else {
-    await conn.sendMessage(m.chat, {video: buff, caption: `*▢ Titulo:* ${ttl_1}\n*▢ Peso Del Video:* ${roundedFileSizeInMB} MB`, fileName: ttl_1 + '.mp4', mimetype: 'video/mp4'}, {quoted: m});
-    await conn.sendMessage(m.chat, {text: `*[ ✔ ] Video descargado exitosamente.*`, edit: key}, {quoted: m});
+    await conn.sendMessage(m.chat, {video: buff, caption: `*▢ Title:* ${ttl_1}\n*▢ Video size:* ${roundedFileSizeInMB} MB`, fileName: ttl_1 + '.mp4', mimetype: 'video/mp4'}, {quoted: m});
+    await conn.sendMessage(m.chat, {text: `*[ ✔ ] Video Downloaded.*`, edit: key}, {quoted: m});
     enviando = false   
    }
  } catch (ee) {
@@ -65,14 +64,14 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
     const ttl = yt.title;
     const size = yt.video[q].fileSizeH;
     await conn.sendMessage(m.chat, {video: {url: dl_url}, fileName: `${ttl}.mp4`, mimetype: 'video/mp4', caption: `*▢ Titulo:* ${ttl}\n*▢ Peso Del Video:* ${size}`, thumbnail: await fetch(yt.thumbnail)}, {quoted: m});
-    await conn.sendMessage(m.chat, {text: '*[ ✔ ] Video descargado exitosamente.*', edit: key}, {quoted: m});
+    await conn.sendMessage(m.chat, {text: '*[ ✔ ] Video downloaded successfully.*', edit: key}, {quoted: m});
     enviando = false
   } catch (ee2) {
     console.log(ee2)
     try {
       const mediaa = await ytMp4(youtubeLink);
       await conn.sendMessage(m.chat, {video: {url: mediaa.result}, fileName: `error.mp4`, caption: `_𝐓𝐡𝐞 𝐌𝐲𝐬𝐭𝐢𝐜 - 𝐁𝐨𝐭_`, thumbnail: mediaa.thumb, mimetype: 'video/mp4'}, {quoted: m});
-      await conn.sendMessage(m.chat, {text: '*[ ✔ ] Video descargado exitosamente.*', edit: key}, {quoted: m});
+      await conn.sendMessage(m.chat, {text: '*[ ✔ ] Video downlowded successfully.*', edit: key}, {quoted: m});
       enviando = false
     } catch {
       try {
@@ -82,17 +81,17 @@ const handler = async (m, {conn, args, usedPrefix, command}) => {
         const n2 = lolh.result.link;
         const n3 = lolh.result.size;
         const n4 = lolh.result.thumbnail;
-        await conn.sendMessage(m.chat, {video: {url: n2}, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `*▢ Titulo:* ${n}\n*▢ Peso Del Video:* ${n3}`, thumbnail: await fetch(n4)}, {quoted: m});
-        await conn.sendMessage(m.chat, {text: '*[ ✔ ] Video descargado exitosamente.*', edit: key}, {quoted: m});
+        await conn.sendMessage(m.chat, {video: {url: n2}, fileName: `${n}.mp4`, mimetype: 'video/mp4', caption: `*▢ Title:* ${n}\n*▢ Video size:* ${n3}`, thumbnail: await fetch(n4)}, {quoted: m});
+        await conn.sendMessage(m.chat, {text: '*[ ✔ ] Video downloaded successfully.*', edit: key}, {quoted: m});
         enviando = false
       } catch {
-        await conn.sendMessage(m.chat, {text: `*[ ❌ ] El video no pudo ser descargado ni enviado, vuelva a intentarlo.*`, edit: key}, {quoted: m});
-        throw '*[❗] Error, no fue posible descargar el video.*';
+        await conn.sendMessage(m.chat, {text: `*[ ❌ ] The video could not be downloaded or sent, try again.*`, edit: key}, {quoted: m});
+        throw '*[❗] Error, it was not possible to download the video.*';
       }
     }
   }
 }};
-handler.command = /^(video2|fgmp4|dlmp4|getvid2|yt(v|mp4)?)$/i;
+handler.command = /^(video|fgmp4|dlmp4|getvid|yt(v|mp4)?)$/i;
 export default handler;
 
 function bytesToSize(bytes) {

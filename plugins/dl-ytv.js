@@ -17,7 +17,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
     }
 
     if (format.contentLength / (1024 * 1024) >= limit) {
-      return m.reply(`≡ *❏ *ღ Mr-Malik YTV ღ* *\n\n▢ *⚖️Size*: ${format.contentLength / (1024 * 1024).toFixed(2)}MB\n▢ *🎞️Quality*: ${format.qualityLabel}\n\n▢ The File Exceeds The Download Limit *+${limit} MB*`);
+      return m.reply(`≡ *Mr Malik*\n\n▢ *⚖️Size*: ${format.contentLength / (1024 * 1024).toFixed(2)}MB\n▢ *🎞️Quality*: ${format.qualityLabel}\n\n▢ The File Exceeds The Download Limit *+${limit} MB*`);
     }
 
     const tmpDir = os.tmpdir();
@@ -37,9 +37,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
 	  ⬡ Title: ${info.videoDetails.title}
 	  ⬡ Duration: ${info.videoDetails.lengthSeconds} seconds
 	  ⬡ Views: ${info.videoDetails.viewCount}
-	  ⬡ Upload: ${info.videoDetails.publishDate}
-	  ⬡ Link: ${args[0]}
-	  █▓▒▒░░░░░░▒▒▓█`,
+	  ╰─────────────────⬣`,
         m,
         false,
         { asDocument: chat.useDocument }
@@ -59,9 +57,9 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
   }
 };
 
-handler.help = ['ytmp4 <yt-link>'];
+handler.help = ['ytmp42 <yt-link>'];
 handler.tags = ['dl'];
-handler.command = ['ytmp4', 'video'];
+handler.command = ['ytmp42', 'video2'];
 handler.diamond = false;
 
 export default handler;
