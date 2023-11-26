@@ -6,7 +6,6 @@ let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}alive_
-│ _${usedPrefix}owner_
 ╰─────────────⦁
 
 ╭───❮ *Download* ❯
@@ -15,6 +14,9 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}play2 (video)_
 │ _${usedPrefix}play.1_
 │ _${usedPrefix}play.2_
+│ _${usedPrefix}playdoc (Doc file audio)_
+│ _${usedPrefix}playdoc2 (Doc file video)_
+│ _${usedPrefix}playlist_
 │ _${usedPrefix}video_
 │ _${usedPrefix}video2_
 │ _${usedPrefix}song_
@@ -27,15 +29,13 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}tiktok *link*_
 │ _${usedPrefix}tiktokstalk_
 │ _${usedPrefix}fb *link*_
-│ _${usedPrefix}apk search *app name*_
-│ _${usedPrefix}apk app *link*_
+│ _${usedPrefix}apk *app name*_
 │ _${usedPrefix}meme *get random meme*_
 ╰─────────────⦁
 
 ${readMore}
 ╭───❮ *☆ Tools ☆* ❯
 │ _${usedPrefix}chatgpt *text*_
-│ _${usedPrefix}bard_
 │ _${usedPrefix}toanime_
 │ _${usedPrefix}tomp3_
 │ _${usedPrefix}toimg_
