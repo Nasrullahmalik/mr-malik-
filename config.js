@@ -147,7 +147,7 @@ global.bottime = `🧑‍💻 Time : ${wktuwib}`
 global.titlebot = '🎋 ┊  mr-malik'
 global.author = global.wm
 global.logo = 'https://i.ibb.co/jLnr3K9/20231025-195821.jpg'
-
+global.pdoc = ['application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/msword', 'application/pdf', 'text/rtf'];
 
 
 /*============== LOGO ==============*/
