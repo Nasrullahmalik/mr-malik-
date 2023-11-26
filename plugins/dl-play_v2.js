@@ -6,7 +6,8 @@ let fileName;
 let apiUrl;
 let enviando = false;
 const handler = async (m, { command, usedPrefix, conn, text }) => {
-  if (!text) throw `_*<Mr-Malik - play />*_ \ n \ n*[ℹ️] The title or link of the YouTube video is needed.*\ N \ n*[💡] Example: Mera dil badaldy_`;    const yt_play = await search(args.join(' '));
+  if (!text) throw `_*<Mr-Malik - play />*_ \ n \ n*[ℹ️] The title or link of the YouTube video is needed.*\ N \ n*[💡] Example: Mera dil badaldy_`;    
+  
  if (enviando) return;
     enviando = true
   try {
