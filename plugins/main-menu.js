@@ -7,17 +7,17 @@ let readMore = more.repeat(850)
 let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}alive_
 │ _${usedPrefix}owner_
-│ _${usedPrefix}bot_
-│ _${usedPrefix}runtime_
-│ _${usedPrefix}infobot_
 ╰─────────────⦁
 
-╭───❮ *☆☆🇵🇰☆☆* ❯
+╭───❮ *Download* ❯
+│ _${usedPrefix}yts (search)_
+│ _${usedPrefix}play (audio)_
+│ _${usedPrefix}play2 (video)_
+│ _${usedPrefix}play.1_
+│ _${usedPrefix}play.2_
 │ _${usedPrefix}video_
 │ _${usedPrefix}video2_
 │ _${usedPrefix}song_
-│ _${usedPrefix}play_
-│ _${usedPrefix}yts_
 │ _${usedPrefix}insta *link*_
 │ _${usedPrefix}img_
 │ _${usedPrefix}pinterest_
@@ -33,8 +33,9 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 ╰─────────────⦁
 
 ${readMore}
-╭───❮ *☆☆ 🇵🇰 ☆☆* ❯
-│ _${usedPrefix}openai *text*_
+╭───❮ *☆ Tools ☆* ❯
+│ _${usedPrefix}chatgpt *text*_
+│ _${usedPrefix}bard_
 │ _${usedPrefix}toanime_
 │ _${usedPrefix}tomp3_
 │ _${usedPrefix}toimg_
