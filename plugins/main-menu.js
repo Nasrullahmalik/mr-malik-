@@ -36,6 +36,9 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 ${readMore}
 ╭───❮ *☆ Tools ☆* ❯
 │ _${usedPrefix}chatgpt *text*_
+│ _${usedPrefix}geo *Geo News*_
+│ _${usedPrefix}cricket_
+│ _${usedPrefix}weather_
 │ _${usedPrefix}toanime_
 │ _${usedPrefix}tomp3_
 │ _${usedPrefix}toimg_
@@ -56,12 +59,6 @@ ${readMore}
 │ _${usedPrefix}slow_
 ╰─────────────⦁
 
-
-╭───❮ *☆☆☆ 🇵🇰 ☆☆☆* ❯
-│ _${usedPrefix}math_
-│ _${usedPrefix}math answer_
-│ _${usedPrefix}ppt_
-╰─────────────⦁
 
 ╭───❮ *☆☆☆ 🇵🇰 ☆☆☆* ❯
 │ _${usedPrefix}logo_
@@ -91,7 +88,6 @@ ${readMore}
 │ _${usedPrefix}qrmaker_
 │ _${usedPrefix}true_
 │ _${usedPrefix}fancy_
-│ _${usedPrefix}weather_
 │ _${usedPrefix}itunes_
 ╰─────────────⦁
 
