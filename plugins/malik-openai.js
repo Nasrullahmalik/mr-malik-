@@ -33,7 +33,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
         const data = { "model": "gpt-3.5-turbo", "messages": [{ "role": "system", "content": sistema1 }, ...chgptdb, ]};
         const response = await fetch(url, {method: "POST", headers: headers, body: JSON.stringify(data)});
         const result = await response.json();
-        const finalResponse = result.choices[0].message.content;
+        const finalResponse =` ┅═❏ *Chatgpt* ❏═┅\n\n${result.choices[0].message.content}\n\nℹ${packname2}/+923494757886`;
         return finalResponse;
         };
         let respuesta = await getOpenAIChatCompletion(text);
@@ -99,7 +99,7 @@ const handler = async (m, {conn, text, usedPrefix, command}) => {
         const akuariapi2 = await fetch(`https://api.akuari.my.id/ai/gpt?chat=${text}`);
         const akuariapijson2 = await akuariapi2.json();
         if (akuariapijson2.respon == 'error' || akuariapijson2.respon == '' || !akuariapijson2.respon) return XD; // causar error undefined para lanzar msg de error
-        const akuariapiresult2 = await translate(`${akuariapijson2.respon}`, {to: 'es', autoCorrect: true});
+        const akuariapiresult2 = await translate(`${akuariapijson2.respon}`, {to: 'en', autoCorrect: false});
         m.reply(akuariapiresult2.text.trim());
     } catch {
       try {
