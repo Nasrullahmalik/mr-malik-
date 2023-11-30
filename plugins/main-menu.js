@@ -1,13 +1,14 @@
 let handler = async (m, { conn, usedPrefix, command}) => {
 let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 if (!(who in global.db.data.users)) throw `❌ The User Is Not Found In My Database`
-let pp = './Abhi.jpg'
+let pp = 'https://i.ibb.co/XJ6gsgV/IMG-20231117-WA0020.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
 let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}alive_
 ╰─────────────⦁
-
+*Follow me on Facebook*
+facebook.com/NasrullahMachi
 ╭───❮ *Download* ❯
 │ _${usedPrefix}yts (search)_
 │ _${usedPrefix}play (audio)_
