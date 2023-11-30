@@ -7,8 +7,8 @@ let readMore = more.repeat(850)
 let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 │ _${usedPrefix}alive_
 ╰─────────────⦁
-*Follow me on Facebook*
-facebook.com/NasrullahMachi
+\n *Follow me on Facebook:*
+facebook.com/NasrullahMachi\n
 ╭───❮ *Download* ❯
 │ _${usedPrefix}yts (search)_
 │ _${usedPrefix}play (audio)_
