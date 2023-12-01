@@ -16,11 +16,14 @@
 // • Xtreshe (Beban)
 // • Dll
 
-import { watchFile, unwatchFile } from 'fs'
-import chalk from 'chalk'
-import { fileURLToPath } from 'url'
-import moment from 'moment-timezone'
-
+import {watchFile, unwatchFile} from 'fs';
+import chalk from 'chalk';
+import {fileURLToPath} from 'url';
+import fs from 'fs'; 
+import cheerio from 'cheerio';
+import fetch from 'node-fetch';
+import axios from 'axios';
+import moment from 'moment-timezone';
 
 
 /*==============USER-INFO==============*/
@@ -83,38 +86,56 @@ global.ppulsa = '-' //Nomor SimCard Yang Kamu Pake
 global.psaweria = '-' //Link Saweriamu Kalo Nggada Ketik - aja
 
 
+global.keysZens = ['LuOlangNgentot', 'c2459db922', '37CC845916', '6fb0eff124', 'hdiiofficial', 'fiktod', 'BF39D349845E', '675e34de8a', '0b917b905e6f'];
+global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())];
+global.keysxteammm = ['29d4b59a4aa687ca', '5LTV57azwaid7dXfz5fzJu', 'cb15ed422c71a2fb', '5bd33b276d41d6b4', 'HIRO', 'kurrxd09', 'ebb6251cc00f9c63'];
+global.keysxteam = keysxteammm[Math.floor(keysxteammm.length * Math.random())];
+global.keysneoxrrr = ['5VC9rvNx', 'cfALv5'];
+global.keysneoxr = keysneoxrrr[Math.floor(keysneoxrrr.length * Math.random())];
+global.lolkeysapi = ['GataDios']; // ['BrunoSobrino_2']
+global.itsrose = ['4b146102c4d500809da9d1ff'];
 
-
-global.keysZens = ['c2459db922', '37CC845916', '6fb0eff124']
-global.lolkeysapi = ['BrunoSobrino']
-global.keysxxx = keysZens[Math.floor(keysZens.length * Math.random())]
-global.lolkey = 'apikeymu'
-global.xkey = 'APIKEYMU'
-global.cricket_URL = 'https://m.cricbuzz.com/cricket-commentary/75602/nz-vs-sl-41st-match-icc-cricket-world-cup-2023' //paste new live match url here
-/*============== API ==============*/
-global.APIs = { // API Prefix
-  // name: 'https://website'
-  nrtm: 'https://nurutomo.herokuapp.com',
+global.APIs = {
+  ApiEmpire: 'https://api-brunosobrino.zipponodes.xyz',
   xteam: 'https://api.xteam.xyz',
-  zahir: 'https://zahirr-web.herokuapp.com',
+  dzx: 'https://api.dhamzxploit.my.id',
   lol: 'https://api.lolhuman.xyz',
-  ana: 'https://anabotofc.herokuapp.com/',
-  adiisus: 'https://adiixyzapi.herokuapp.com',
-  violetics : 'https://violetics.pw',
-  zenz: 'https://zenzapi.xyz',
-  males : 'https://malesin.xyz',
-  fgmods: 'https://api-fgmods.ddns.net',
-}
-global.APIKeys = { // APIKey Here
-  // 'https://website': 'apikey'
-  'https://api.xteam.xyz': 'APIKEYMU',
-  'https://anabotofc.herokuapp.com/': 'AnaBot',
-  'https://api.lolhuman.xyz': 'Apikeymu',
-  'https://zahirr-web.herokuapp.com': 'zahirgans',
-  'https://zenzapi.xyz': '01ABEB1E11',
-  'https://violetics.pw': 'beta',
-  'https://api-fgmods.ddns.net': 'fg-dylux'
-}
+  neoxr: 'https://api.neoxr.my.id',
+  zenzapis: 'https://api.zahwazein.xyz',
+  akuari: 'https://api.akuari.my.id',
+  akuari2: 'https://apimu.my.id',
+  fgmods: 'https://api-fgmods.ddns.net',
+  botcahx: 'https://api.botcahx.biz.id',
+  ibeng: 'https://api.ibeng.tech/docs',
+  rose: 'https://api.itsrose.site',
+  popcat: 'https://api.popcat.xyz',
+  xcoders: 'https://api-xcoders.site',
+  vihangayt: 'https://vihangayt.me',
+  erdwpe: 'https://api.erdwpe.com',
+  xyroinee: 'https://api.xyroinee.xyz',
+  nekobot: 'https://nekobot.xyz'
+},
+global.APIKeys = {
+  'https://api.xteam.xyz': `${keysxteam}`,
+  'https://api.lolhuman.xyz': 'GataDios',
+  'https://api.neoxr.my.id': `${keysneoxr}`,
+  'https://api.zahwazein.xyz': `${keysxxx}`,
+  'https://api-fgmods.ddns.net': 'fg-dylux',
+  'https://api.botcahx.biz.id': 'Admin',
+  'https://api.ibeng.tech/docs': 'tamvan',
+  'https://api.itsrose.site': 'Rs-Zeltoria',
+  'https://api-xcoders.site': 'Frieren',
+  'https://api.xyroinee.xyz': 'uwgflzFEh6'
+};
+
+/** ************************/
+global.cheerio = cheerio;
+global.fs = fs;
+global.fetch = fetch;
+global.axios = axios;
+global.moment = moment;
+
+
 // The word APIKEY is filled with your own apikey, by buying it on the website
 
 /*============== WATERMARK ==============*/
@@ -159,7 +180,7 @@ global.error ='🚫'
 global.dtu = 'ɪɴꜱᴛᴀɢʀᴀᴍ'
 global.dtc = 'ᴄᴀʟʟ ᴏᴡɴᴇʀ'
 global.phn = '+923124442554'
-
+global.rwait = '🔃'
 /*=========== TYPE DOCUMENT ===========*/
 global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
 global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
@@ -167,7 +188,9 @@ global.dxlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.shee
 global.dpdf = 'application/pdf'
 global.drtf = 'text/rtf'
 global.djson = 'application/json'
-
+global.error = '❌' 
+global.mlc = '📃'
+global.sdc = '🎶'
 global.thumbdoc = 'https://i.ibb.co/jLnr3K9/20231025-195821.jpg'
 
 /*=========== FAKE SIZE ===========*/
