@@ -10,7 +10,7 @@ let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
 \n *Follow me on Facebook:*
 facebook.com/NasrullahMachi\n
 ╭───❮ *Download* ❯
-│ _${usedPrefix}yts (search)_
+│ _${usedPrefix}yts *Youtube search*_
 │ _${usedPrefix}play (audio)_
 │ _${usedPrefix}play2 (video)_
 │ _${usedPrefix}play.1_
@@ -29,7 +29,8 @@ facebook.com/NasrullahMachi\n
 │ _${usedPrefix}twitter *link*_
 │ _${usedPrefix}tiktok *link*_
 │ _${usedPrefix}tiktokstalk_
-│ _${usedPrefix}fb *link*_
+│ _${usedPrefix}fb *fb link*_
+│ _${usedPrefix}fb2 *fb link*_
 │ _${usedPrefix}apk *app name*_
 │ _${usedPrefix}meme *get random meme*_
 ╰─────────────⦁
