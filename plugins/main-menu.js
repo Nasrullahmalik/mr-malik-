@@ -4,7 +4,7 @@ if (!(who in global.db.data.users)) throw `❌ The User Is Not Found In My Datab
 let pp = 'https://i.ibb.co/XJ6gsgV/IMG-20231117-WA0020.jpg'
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(850) 
-let lkr = `╭───❮ *☆☆🇵🇰☆☆* ❯
+let lkr = `╭───❮ *MR-Malik* ❯
 │ _${usedPrefix}alive_
 ╰─────────────⦁
 \n *Follow me on Facebook:*
