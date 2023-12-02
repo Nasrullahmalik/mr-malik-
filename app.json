@@ -1,9 +1,9 @@
 {
-  "name": "ABHISHEK-SER",
+  "name": "MR-Malik",
   "description": "Customizable WhatsApp Bot",
-  "repository": "https://github.com/AbhishekSuresh2/ABHISHEK-SER",
-  "logo": "https://replicate.delivery/pbxt/QbP6Fh3ZXwKON9SCB70ERGwwgeeSbztwKIOIzhUeXFkwnFHiA/out.png",
-  "keywords": ["bot", "whatsapp", "whatsapp-bot", "ABHISHEK-SER", "wa-bot", "THIS IS TAGS I REMOVE SOME TAGS"],
+  "repository": "https://github.com/nasrullahmalik/mr-malik-",
+  "logo": "https://i.ibb.co/XJ6gsgV/IMG-20231117-WA0020.jpg",
+  "keywords": ["bot", "whatsapp", "whatsapp-bot", "MR-MALIK", "wa-bot", "THIS IS TAGS I REMOVE SOME TAGS"],
   "buildpacks": [
     {
       "url": "heroku/nodejs"
