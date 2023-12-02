@@ -16,12 +16,12 @@ const { name, author } = require(join(__dirname, './package.json')) // https://w
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
-say('ABHISHEK -  SER', {
+say('Mr-Malik', {
   font: 'chrome',
   align: 'center',
   gradient: ['red', 'magenta']
 })
-say(`'${name}' By @ABHISHEK SURESH._`, {
+say(`'${name}' By @Nasrullah Malik._`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']
@@ -61,7 +61,7 @@ function start(file) {
   })
   p.on('exit', (_, code) => {
     isRunning = false
-    console.error('❎ An unexpected error occurred:', code)
+    console.error('❎ An Unexpected Error Occurred:', code)
     if (code === 0) return
     watchFile(args[0], () => {
       unwatchFile(args[0])
